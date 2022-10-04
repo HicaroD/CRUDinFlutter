@@ -12,7 +12,7 @@ class UserTile extends StatelessWidget {
     return ListTile(
       title: Text(user.name),
       subtitle: Text("Age: ${user.age}"),
-      trailing: Container(
+      trailing: SizedBox(
         width: 80,
         child: Row(
           children: [
