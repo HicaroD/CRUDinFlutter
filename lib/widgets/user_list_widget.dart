@@ -23,7 +23,13 @@ class _UserListState extends State<UserList> {
         actions: [
           IconButton(
             onPressed: () {
-              Navigator.of(context).pushNamed(Routes.USER_ADD_FORM);
+              Navigator.of(context).pushNamed(Routes.USER_ADD_FORM).then(
+                (newUser) {
+                  setState(() {
+                    users.addNewUser(newUser as User);
+                  });
+                },
+              );
             },
             icon: const Icon(Icons.add),
           ),
