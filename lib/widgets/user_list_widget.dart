@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_crud/routes/routes.dart';
 import 'package:flutter_crud/widgets/user_tile_widget.dart';
 
 import '../data/users.dart';
@@ -22,9 +23,7 @@ class _UserListState extends State<UserList> {
         actions: [
           IconButton(
             onPressed: () {
-              setState(() {
-                users.addNewUser(User(id: 10, name: "Hícaro", age: 10));
-              });
+              Navigator.of(context).pushNamed(Routes.USER_ADD_FORM);
             },
             icon: const Icon(Icons.add),
           ),

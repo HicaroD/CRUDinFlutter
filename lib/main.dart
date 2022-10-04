@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_crud/routes/routes.dart';
+import 'package:flutter_crud/widgets/add_user_form.dart';
 import 'package:flutter_crud/widgets/user_list_widget.dart';
 
 void main() {
@@ -15,7 +17,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const UserList(),
+      routes: {
+        Routes.HOME: (_) => const UserList(),
+        Routes.USER_ADD_FORM: (_) => AddUserForm(),
+      },
     );
   }
 }
